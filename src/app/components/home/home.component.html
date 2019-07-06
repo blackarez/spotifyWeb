@@ -1,0 +1,27 @@
+<app-nav></app-nav>
+<div class="container marginconteiner">
+  <div class="row">
+    <div class="col-12 col-sm-6 my-2 my-sm-0">
+      <div class="form-row">
+        <div class="col col-sm-3">
+          <button class="btn btn-outline-success" (click)="buscar(buscador.value)"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="col-10 col-sm-9">
+          <input #buscador (keyup.enter)="buscar(buscador.value)" class="form-control" type="text" placeholder="Album" />
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6">
+      <div class="dropdown float-right">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-tools"></i> Mostrar
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" (click)="mostrarLista = true"><i class="fas fa-list"></i> List</a>
+          <a class="dropdown-item" (click)="mostrarLista = false"><i class="fas fa-th"></i> Grid</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-card [items]="listado" [mostrarLista]="mostrarLista"></app-card>
+</div>

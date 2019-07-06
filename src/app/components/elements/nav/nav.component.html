@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    <img src="assets/img/banner-ico.png" width="30" height="30" alt="">
+    Spotify - Angel Gualteros
+  </a>
+  <div class="ml-auto" *ngIf="perfil">
+    <div class="dropdown">
+      <button type="button" class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-user"></i>
+      </button>
+      <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left" aria-labelledby="dropdownMenuButton">
+        <p class="center-elements">{{user}}</p>
+        <p class="center-elements"><img [src]="img | verificarImg " class="card-img-top" alt="item.name"></p>
+        <a class="dropdown-item" (click)="loginout()" >Salir</a>
+      </div>
+    </div>
+  </div>
+</nav>

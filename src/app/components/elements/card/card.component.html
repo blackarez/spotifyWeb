@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="my-2" [ngClass]="{'col-12 col-sm-6 col-md-4':!mostrarLista,'col-12':mostrarLista}" *ngFor="let item of items;let i = index " [hidden]="hideme[i]">
+    <div class="card bg-dark">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-10 col-sm-8">
+            <h5>{{item.name | uppercase }}</h5>
+          </div>
+          <div class="col-2 col-sm-4">
+            <div class="dropdown float-right">
+              <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-cog"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a (click)="hideme[i] = !hideme[i]"><i class=" dropdown-item center-elements fas fa-eye-slash"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div [ngClass]="{'col-12':!mostrarLista,'col-4':mostrarLista}">
+            <a  [routerLink]="['/more', item.id]">
+              <img [src]="item.images | verificarImg " class="card-img-top" alt="item.name">
+            </a>
+          </div>
+          <div [ngClass]="{'col-12':!mostrarLista,'col-8':mostrarLista}">
+            <app-audio tipo="album" [id]="item.id"  ></app-audio>
+            <h5 class="card-title">Artistas:</h5>
+            <span *ngFor="let artista of item.artists">{{artista.name}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

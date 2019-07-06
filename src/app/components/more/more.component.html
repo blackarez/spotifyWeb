@@ -1,0 +1,37 @@
+<app-nav></app-nav>
+<div class="col-12">
+  <div class="row">
+    <div class="col-12 my-4"> 
+      <button class="btn btn-secondary" type="button" [routerLink]="['/home']">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+    </div>
+    <div class="col-4">
+      <img [src]="img | verificarImg" class="card-img-top" alt="">
+    </div>
+    <div class="col-8">
+      <div class="card bg-dark">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-3"><h6>Titulo</h6></div>
+            <div class="col-7"><h6>Musica</h6></div>
+            <div class="col-2"><h6>Duracion</h6></div>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-dark" *ngFor="let item of tracksList">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-3"><p>{{item.name}}</p></div>
+            <div class="col-7">
+              <app-audio tipo="track" [id]="item.id"  ></app-audio>
+            </div>
+            <div class="col-2">
+              <p>{{item.duration_ms | convertirsmtom | number:'2.2-2' }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

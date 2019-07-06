@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background: #535556;
+}
+
+nav{
+    border-bottom: 1px solid gray;
+}
+
+.marginconteiner{
+    margin-top: 10px;
+ }
+
+ .center-elements{
+     text-align: center !important;
+ }
+
+ .card span{
+    background: darkgray;
+    color: white;
+    border-radius: 3px;
+    padding: 5px;
+ }
+
+ .dropdown.float-right .dropdown-menu.show{
+    min-width: 60px;
+ }
+
+ .card h5,.card h4,.card h6,.card p , .card label{
+     color: white;
+ }
+ /* .card .dropdown{
+     margin-top: -40px;
+ } */
+
+ .card .dropdown-menu.show{
+     min-width: 50px;
+ }
+
+ .dropdown-menu.dropdown-menu-right.dropdown-menu-lg-left.show {
+    background: darkgray;
+    padding: 2px;
+    color: white;
+}
+.dropdown-menu.dropdown-menu-right.dropdown-menu-lg-left.show a:hover {
+    background: #535556;
+}
+.dropdown-menu.dropdown-menu-right.dropdown-menu-lg-left.show p{
+    color: white;
+}
